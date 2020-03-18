@@ -44,27 +44,15 @@ export default function Reset({ navigation }) {
                 <View style={styles.subContainer}>
                     <Button
                         style={styles.textInput}
-                        icon={
-                            <Icon
-                                name="input"
-                                size={15}
-                                color="white"
-                            />
-                        }
-                        title="Reset"
+                        icon={ <Icon name="input" size={15} color="white"/> }
+                        title=" Reset"
                         onPress={() => reset()} />
                 </View>
                 <View style={styles.subContainer}>
                     <Button
                         style={styles.textInput}
-                        icon={
-                            <Icon
-                                name="check-circle"
-                                size={15}
-                                color="white"
-                            />
-                        }
-                        title="Back to Login"
+                        icon={ <Icon name="check-circle" size={15} color="white" /> }
+                        title=" Back to Login"
                         onPress={() => {
                             navigation.navigate('Login');
                         }} />

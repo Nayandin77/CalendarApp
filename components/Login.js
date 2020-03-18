@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, ActivityIndicator, View, Text, Alert } from 'react-native';
+import { StyleSheet, ActivityIndicator, View, Text, Alert, Image } from 'react-native';
 import { Button, Input, Icon } from 'react-native-elements';
 import auth from '@react-native-firebase/auth';
 
@@ -24,85 +24,65 @@ export default function Login({ navigation }) {
         }
     };
 
+
     return (
         <View style={styles.container}>
+            <View style={styles.logoContainer}>
+                <Image style={styles.logo} source={require ('../assets/logo.png')} />
+            </View>
+
             <View style={styles.formContainer}>
                 <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-                    <Text style={{ fontSize: 28, height: 50  }}>Please Login!</Text>
+                    <Text style={{ fontSize: 24, height: 50 }}>Login</Text>
                 </View>
+
                 <View style={styles.subContainer}>
-                    <Input
-                        style={styles.textInput}
+                    <Input style={styles.textInput}
                         placeholder='Your Email'
-                        leftIcon={
-                            <Icon
-                            name='mail'
-                            size={24}
-                            />
-                        }
+                        leftIcon={ <Icon name='mail'size={24} /> }
                         value={email}
                         onChangeText={setEmail}
                     />
                 </View>
+
                 <View style={styles.subContainer}>
-                    <Input
-                        style={styles.textInput}
+                    <Input style={styles.textInput}
                         placeholder='Your Password'
-                        leftIcon={
-                            <Icon
-                            name='lock'
-                            size={24}
-                            />
-                        }
+                        leftIcon={ <Icon name='lock' size={24} /> }
                         secureTextEntry={true}
                         value={password}
                         onChangeText={setPassword}
                     />
                 </View>
+
                 <View style={styles.subContainer}>
-                    <Button
-                        style={styles.textInput}
-                        icon={
-                            <Icon
-                                name="input"
-                                size={15}
-                                color="white"
-                            />
-                        }
-                        title="Login"
+                    <Button tyle={styles.textInput}
+                        icon={ <Icon name="input" size={15} color="white" /> }
+                        title=" Login"
                         onPress={() => login()} />
                 </View>
-                <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                    <Text>Forgot Password?</Text>
+
+                <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+                    <Text style={{ fontSize:12 }}>Forgot Password?</Text>
                 </View>
+
                 <View style={styles.subContainer}>
-                    <Button
-                        style={styles.textInput}
-                        icon={
-                            <Icon
-                                name="refresh"
-                                size={15}
-                                color="white"
-                            />
-                        }
+                    <Button style={styles.textInput}
+                        icon={ <Icon name="refresh" size={15} color="white" /> }
                         title="Reset Password"
                         onPress={() => {
                             navigation.navigate('Reset');
                         }} />
                 </View>
-                <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+
+                <View style={{ alignItems: 'center', justifyContent: 'center' }}>
                     <Text>Not a user?</Text>
                 </View>
+
                 <View style={styles.subContainer}>
                     <Button
                         style={styles.textInput}
-                        icon={
-                            <Icon
-                                name="check-circle"
-                                size={15}
-                                color="white"
-                            />
-                        }
+                        icon={ <Icon name="check-circle" size={15} color="white" /> }
                         title="Register"
                         onPress={() => {
                             navigation.navigate('Register');
@@ -126,16 +106,27 @@ Login.navigationOptions = ({ navigation }) => ({
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
         alignItems: 'center',
+        backgroundColor: '#ffffff'
+    },
+    logoContainer: {
+        marginTop: 60,
+        borderBottomWidth: 1,
+    },
+    logo: {
+        width: 350,
+        resizeMode: 'contain'
     },
     formContainer: {
-        height: 400,
-        padding: 20
+        height: 200,
+        padding: 20,
+        marginTop: 80
     },
     subContainer: {
-        marginBottom: 20,
-        padding: 5,
+        width: 250,
+        marginTop: 10,
+        marginBottom: 5,
+        padding: 2,
     },
     activity: {
         position: 'absolute',

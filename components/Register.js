@@ -69,23 +69,19 @@ export default function Register({ navigation }) {
                                 color="white"
                             />
                         }
-                        title="Register"
+                        title=" Register"
                         onPress={() => register()} />
                 </View>
-                <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+
+                <View style={{ alignItems: 'center', justifyContent: 'center' }}>
                     <Text>Already a user?</Text>
                 </View>
+
                 <View style={styles.subContainer}>
                     <Button
                         style={styles.textInput}
-                        icon={
-                            <Icon
-                                name="input"
-                                size={15}
-                                color="white"
-                            />
-                        }
-                        title="Login"
+                        icon={ <Icon name="input" size={15} color="white" /> }
+                        title=" Login"
                         onPress={() => {
                             navigation.navigate('Login');
                         }} />
@@ -116,8 +112,10 @@ const styles = StyleSheet.create({
         padding: 20
     },
     subContainer: {
-        marginBottom: 20,
-        padding: 5,
+        width: 250,
+        marginTop: 10,
+        marginBottom: 5,
+        padding: 2,
     },
     activity: {
         position: 'absolute',

@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import Login from './components/Login';
@@ -19,7 +18,7 @@ const RootStack = createStackNavigator(
     initialRouteName: 'Home',
     defaultNavigationOptions: {
       headerStyle: {
-        backgroundColor: '#19AC52',
+        backgroundColor: '#08415c',
       },
       headerTintColor: '#fff',
       headerTitleStyle: {
