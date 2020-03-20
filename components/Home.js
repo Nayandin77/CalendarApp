@@ -24,7 +24,7 @@ export default function Home({ navigation }) {
     }
 
     return (
-        console.log(user),
+        console.log(user), // remove later
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
             <Text>Welcome {user.email}</Text>
             
