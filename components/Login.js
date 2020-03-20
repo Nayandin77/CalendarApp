@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
     formContainer: {
         height: 200,
         padding: 20,
-        marginTop: 80
+        marginTop: 40
     },
     subContainer: {
         width: 250,
